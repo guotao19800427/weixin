@@ -1,0 +1,57 @@
+{
+	"category" : "叶菜类",
+	"list"     :[
+					{
+						"commodity_id"     : 8,
+						"name"             : "青椒",
+						"description"      : "青椒青椒青椒青椒青椒青椒青椒青椒青椒",
+						"price_per_unit"   : 149,
+						"price_per_weight" : 14.9,
+						"format"           : "10斤",
+						"sold_unit"        : "8888888",
+						"pic"              : "/www/img/pic_01.jpg",
+						"market_price"     : 20,
+						"fav"              : 0,
+						"bought_unit"      : 0
+					},
+					{
+						"commodity_id"     : 19,
+						"name"             : "古伦木",
+						"description"      : "我的棍子呢？谁把我的棍子抢走了?",
+						"price_per_unit"   : 14.9,
+						"price_per_weight" : 1.49,
+						"format"           : "10斤",
+						"sold_unit"        : "6666666",
+						"pic"              : "/www/img/pic_02.jpg",
+						"market_price"     : 20,
+						"fav"              : 1,
+						"bought_unit"      : 12
+					},
+					{
+						"commodity_id"     : 28,
+						"name"             : "青椒2",
+						"description"      : "青椒青椒青椒青椒青椒青椒青椒青椒青椒22222222222",
+						"price_per_unit"   : 2249,
+						"price_per_weight" : 224.9,
+						"format"           : "100斤",
+						"sold_unit"        : "78899",
+						"pic"              : "/www/img/pic_01.jpg",
+						"market_price"     : 20,
+						"fav"              : 1,
+						"bought_unit"      : 10
+					},
+					{
+						"commodity_id"     : 1999,
+						"name"             : "古伦木eeeeee",
+						"description"      : "我的棍子呢？eedsad谁把我的棍子抢走了?",
+						"price_per_unit"   : 1444.9,
+						"price_per_weight" : 144.49,
+						"format"           : "10斤",
+						"sold_unit"        : "66666668888",
+						"pic"              : "/www/img/pic_02.jpg",
+						"market_price"     : 200,
+						"fav"              : 1,
+						"bought_unit"      : 120
+					}
+				]
+}

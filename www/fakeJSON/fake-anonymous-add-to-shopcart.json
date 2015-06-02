@@ -1,0 +1,21 @@
+{
+	"success" : 1,
+	"data"    : {
+		"2239" : {
+			"id"        : "2239",
+			"name"      : "大白菜一号",
+			"price"     : 15.9,
+			"format"    : "1.59 * 10斤装",
+			"amount"    : 8
+		},
+		"2343" : {
+			"id"        : "2343",
+			"name"      : "猪肉一号",
+			"price"     : 115.9,
+			"format"    : "11.59 * 10斤装",
+			"amount"    : 6
+		}
+	},
+	"totalPrice"  : 8888.88,
+	"totalNumber" : 23
+}

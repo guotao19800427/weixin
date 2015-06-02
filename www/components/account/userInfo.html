@@ -1,0 +1,31 @@
+<div class="bar bar-header">
+  <button class="button button-clear icon ion-chevron-left" ui-sref="account"></button>
+  <h1 class="title">修改个人资料</h1>
+</div>
+<ion-content class=" has-header">
+  <div class="list">
+    <label class="item item-input item-stacked-label">
+	   <span class="input-label">联系人姓名</span>
+	   <input type="text" value="{{userInfo.personName}}" ng-model = "model.personName">
+	</label>
+	<label class="item item-input item-stacked-label">
+	   <span class="input-label">商铺名称</span>
+	   <input type="text" value="{{userInfo.shopName}}" ng-model = "model.shopName">
+	</label>
+	<label class="item item-input item-stacked-label">
+	   <span class="input-label">邮政编码</span>
+	   <input type="tel" value="{{userInfo.postcode}}" ng-model = "model.postcode">
+	</label>
+	<label class="item  item-stacked-label">
+	    <span class="input-label">所在城市</span>
+	    <select ng-model="model.city" class="self-select">
+	      <option value="">-- 请选择 --</option>
+	      <option ng-repeat = "city in cities" value="{{city.cityName}}" ng-selected="model.cityID === city.cityID">{{city.cityName}}</option>
+	    </select>
+	  </label>
+  </div>
+
+  <div class="padding">
+    <button class="button button-block button-positive" ng-click="editUserInfo();">修改</button>
+  </div>
+</ion-content>

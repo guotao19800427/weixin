@@ -1,0 +1,19 @@
+<div class="bar bar-header bar-balanced">
+  <button class="button button-light" ng-if="obj.pre" ui-sref="orderList({pageNumber : pageNumber -1})">上一页</button>
+  <h1 class="title">我的订单 <span class="normal-size" id="pageinfo">当前第<em ng-bind="pageNumber"></em>页 共<em ng-bind="totalPages"></em>页</span></h1>
+  <button class="button button-light" ng-if="obj.next" ui-sref="orderList({pageNumber : pageNumber +1})">下一页</button>
+</div>
+<ion-content class="has-header has-footer2">
+	<div class="list">
+		<a class="item item-icon-right"  ng-repeat="item in orders.rows" ui-sref="orderDetail({orderId : item.custom_order_id})">
+            <b ng-bind="item.c_t"></b>
+            <h2>订单编号：{{item.custom_order_id}}
+                <!--<span class="balanced" ng-bind="item.status"></span>-->
+            </h2>
+			<p>品类数:<span class="balanced" ng-bind="item.total_number"></span> 总价: <span class="balanced" ng-bind="item.total_price"></span>元
+                <!--已取消: <span class="balanced" ng-bind="item.cancer_number"></span>  待确认: <span class="balanced" ng-bind="item.waitsure_number"></span>  商家已确认: <span class="balanced" ng-bind="item.sure_number"></span>  后台确认: <span class="balanced" ng-bind="item.htsure_number"></span>-->
+            </p>
+			<i class="icon ion-chevron-right balanced"></i>
+		</a>
+	</div>
+</ion-content>

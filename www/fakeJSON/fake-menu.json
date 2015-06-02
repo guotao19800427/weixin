@@ -1,0 +1,30 @@
+{
+	"mainMenu" : [
+		{"id" : "1", "name" : "蔬菜水果", "active" : 1},
+		{"id" : "2", "name" : "蔬菜水果2", "active" : 0},
+		{"id" : "3", "name" : "蔬菜水果3", "active" : 0},
+		{"id" : "4", "name" : "蔬菜水果4", "active" : 0}
+	],
+	"subMenu" : [
+		[
+			{"id" : "1", "name" : "绿叶菜", "active" : 1, "parentId" : "1"},
+			{"id" : "2", "name" : "根茎", "active" : 0, "parentId" : "1"},
+			{"id" : "3", "name" : "瓜果", "active" : 0, "parentId" : "1"}
+		],
+		[
+			{"id" : "4", "name" : "绿叶菜2", "active" : 1, "parentId" : "2"},
+			{"id" : "5", "name" : "根茎2", "active" : 0, "parentId" : "2"},
+			{"id" : "6", "name" : "瓜果2", "active" : 0, "parentId" : "2"}
+		],
+		[
+			{"id" : "7", "name" : "绿叶菜3", "active" : 1, "parentId" : "3"},
+			{"id" : "8", "name" : "根茎3", "active" : 0, "parentId" : "3"},
+			{"id" : "9", "name" : "瓜果3", "active" : 0, "parentId" : "3"}
+		],
+		[
+			{"id" : "10", "name" : "绿叶菜4", "active" : 1, "parentId" : "4"},
+			{"id" : "11", "name" : "根茎4", "active" : 0, "parentId" : "4"},
+			{"id" : "12", "name" : "瓜果4", "active" : 0, "parentId" : "4"}
+		]
+	]
+}

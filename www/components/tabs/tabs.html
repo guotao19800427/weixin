@@ -1,0 +1,23 @@
+
+<div class="tabs tabs-icon-top balanced-bg">
+  
+<a class="tab-item has-badge" ui-sref="dash" ng-class="{'light active' : activeTabIndex === 0}">
+  <i class="icon ion-home"></i>
+  <i class="badge"  style="background-color:#0a9130" ng-bind="cartInfo.itemNumber"></i>
+  菜市场
+</a>
+<a class="tab-item has-badge" ui-sref="shopcart" ng-class="{'light active' : activeTabIndex === 1}">
+  <i class="icon  ion-ios7-cart"></i>
+  购物车
+  <i class="badge"  style="background-color:#ef473a" ng-bind="cartCount ? cartCount : 0"></i>
+</a>
+<a class="tab-item" ui-sref="order" ng-class="{'light active' : activeTabIndex === 2}">
+  <i class="icon ion-clipboard"></i>
+  订单
+</a>
+
+<a class="tab-item" ui-sref="account" ng-class="{'light active' : activeTabIndex === 4}">
+  <i class="icon ion-person"></i>
+  我
+</a>
+</div>

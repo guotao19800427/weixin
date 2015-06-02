@@ -1,0 +1,23 @@
+<div class="bar bar-header">
+  <button class="button button-balanced light" ui-sref="account">返回我的账户</button>
+  <h1 class="title">用户登录</h1>
+</div>
+<ion-content class=" has-header">
+  <div class="list">
+    <label class="item item-input item-stacked-label">
+	   <span class="input-label">手机号码</span>
+	   <input type="text" placeholder="请输入您注册的手机号码" ng-model = "model.phone">
+	</label>
+	<label class="item item-input item-stacked-label">
+	   <span class="input-label">密码</span>
+	   <input type="password" placeholder="请输入密码" ng-model = "model.password">
+	</label>
+  </div>
+
+  <div class="padding">
+    <button class="button button-block button-balanced" ng-click="login();">登录</button>
+  </div>
+  <div class="padding">
+    <button class="button button-block button-light" ui-sref="register">注册新商户</button>
+  </div>
+</ion-content>

@@ -1,0 +1,35 @@
+{
+	"id"         : 201501000334432222,
+	"totalPrice" : 16800.88,
+	"list"       :[
+		{
+			"commodityId"    : 1,
+			"commodityName"  : "青椒",
+			"format"         : "5斤/箱",
+			"price"          : 14.9,
+			"count"          : 7
+		},
+		{
+			"commodityId"    : 2,
+			"commodityName"  : "大白菜",
+			"format"         : "2斤/箱",
+			"price"          : 3.6,
+			"count"          : 17
+		},
+		{
+			"commodityId"    : 3,
+			"commodityName"  : "上海青",
+			"format"         : "1斤/箱",
+			"price"          : 1.8,
+			"count"          : 3
+		}
+	],
+	"info"       :{
+		"personName"  : "张老板",
+		"phone"       : 13800138000,
+		"address"      : "北京市海淀区中关村南大街14号",
+		"deliverTime" : "2015-1-28   8：00~11：00",
+		"comments"    : "货到付款",
+		"status"      : "商家确认"
+	}
+}

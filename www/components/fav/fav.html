@@ -1,0 +1,34 @@
+<div class="bar bar-header bar-balanced">
+  <!--<button class="button button-light" ui-sref="account">返回个人中心</button> -->
+  <button class="button button-light" ng-if="obj.pre" ui-sref="fav({pageNumber : pageNumber -1})">上一页</button>
+  <h1 class="title">我的常用菜 <span class="normal-size">当前第<em ng-bind="currentPgae"></em>页 共<em ng-bind="totalPages"></em>页</span></h1>
+  <button class="button button-light" ng-if="obj.next" ui-sref="fav({pageNumber : pageNumber +1})">下一页</button>
+</div>
+<ion-content class="has-header has-footer">
+	<div class="list price">
+        <div ng-repeat = "item in favList" class="si-item">
+	      <div class="item item-thumbnail-left" href="#">
+	        <img ng-src="{{item.pic ? picURL.prefix + item.pic + picURL.suffix : ''}}" style="background:#eee; width:80px; height:80px;">
+	        <h2 ng-click = "changeFav(item.ci_ids, item.is_favorite, item.id);" class="col-120" style="white-space:pre-wrap;word-break: break-all;"> <span><i class="icon ion-star" ng-class="{'assertive': item.is_favorite === 1}"></i></span> <span ng-bind="item.name + item.level"></span></h2>
+                <p ng-bind="item.alias_name" style="font-weight:700"></p>
+                <p ng-bind="item.subject"></p>
+	      </div>
+	    
+	      <div class="row item" ng-repeat = "ci in item.cis" style=" border-top:0;border-right:0;">
+	        <div class="col col-center font14bold">
+	          &nbsp;<span class="assertive" ng-bind="ci.price"></span>元/<span class="balanced" ng-bind="ci.format"></span><span ng-if="ci.promote_info"><br>&nbsp;<span class="promote assertive-bg light">限购</span><em  ng-bind="ci.promote_info"></em></span>
+	        </div>
+	        <div class="col col-10 no-lr-padding">
+	          <button attr-id={{ci.id}} class="button button-small button-block icon ion-minus button-gray" basket-minus-button></button>
+	        </div>
+	        <div class="col-25 col col-center center-align">
+	          <input type="tel" class="center-align font14bold" ng-model="ci.amount" attr-id={{ci.id}} attr-camount={{ci.amount}} attr-price={{ci.price}} attr-start={{ci.start_sale_time}} attr-end={{ci.end_sale_time}} attr-amount="{{ci.promote_amount}}" attr-limit="{{ci.promote_limit}}"  basket-amount-input>
+	        </div>
+	        <div class="col col-10 no-lr-padding">
+	          <button  attr-id={{ci.id}} attr-price={{ci.price}} attr-start={{ci.start_sale_time}} attr-end={{ci.end_sale_time}} attr-amount="{{ci.promote_amount}}" attr-limit="{{ci.promote_limit}}" class="button button-small button-block icon ion-plus button-gray" basket-plus-button></button>
+	        </div>
+	        
+	      </div>
+	    </div>
+	</div>
+</ion-content>

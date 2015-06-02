@@ -1,0 +1,42 @@
+<div class="bar bar-header bar-balanced">
+  <button class="button button-light" ui-sref="shopcart">返回购物车</button>
+  <h1 class="title">确认订单</h1>
+</div>
+<ion-content class="has-header has-footer2">
+	<div class="row">
+		<div class="col col-67" ng-bind = "userStatus.person_name"></div>
+		<div class="col col-33" ng-bind = "userStatus.phone"></div>
+	</div>
+	<div class="row">
+		<div class="col" ng-bind = "userStatus.address"></div>
+	</div>
+	<div class="row">
+		<div class="col">收货时间: <span ng-bind="userStatus.expect_period"></span></div>
+	</div>
+	<div class="list">
+		<div class="si-item" ng-repeat ="item in cart.list">
+			<div class="item item-thumbnail-left" href="#">
+		        <img ng-src="{{item.pic ? picURL.prefix + item.pic + picURL.suffix : ''}}" style="background:#eee; width:80px; height:80px;">
+		        <h2>{{item.name}}{{item.level}}</h2>
+		        <p ng-bind="item.subject"></p>
+		        <p >今日已购买过<span class="assertive">{{item.today_buy}}</span>{{item.format}}</p>
+		    </div>
+			<div class="row item" ng-repeat = "ci in item.ci_items" style=" border-top:0;border-right:0;">
+				<div class="col col-center col-50">
+		          <span class="assertive" ng-bind="ci.real_price"></span>元/<span class="balanced">{{ci.format}}</span><span class="balanced"></span>
+		        </div>
+		        <div class="col">
+					X <span class="balanced" ng-bind="ci.num"></span>
+				</div>
+				<div class="col">
+					￥<span class="balanced" ng-bind="ci.total_price"></span>
+				</div>
+		        
+			</div>
+		</div>
+	</div>
+</ion-content>
+<div class="bar bar-footer balanced-bg light">
+  <div class="title normal-size" >品类数: <span class="assertive">{{cart.totalNumber}}</span> &nbsp;&nbsp;金额: <span class="assertive">{{cart.totalPrice}}</span> 元</div>
+  <button class="button  pull-right" ui-sref="orderSuccess">确认下单</button>
+</div>

@@ -1,0 +1,17 @@
+{
+	"userId"   : 0,
+	"userInfo" : {
+		"phone"          : "13800138000",
+		"personName"     : "张三",
+		"shopName"       : "龙门客栈",
+		"address"        : "北京市海淀区中关村南大街14号",
+		"postcode"       : 100000,
+		"cityID"         : 1,
+		"shopcartNumber" : 16,
+		"earlyTime"      : "7:00",
+		"lateTime"       : "9:30",
+		"day"            : "2015-03-10",
+		"cityId"        : 1,
+		"companyId"     : 86
+	}
+}

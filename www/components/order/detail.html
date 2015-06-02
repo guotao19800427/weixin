@@ -1,0 +1,58 @@
+<div class="bar bar-header bar-balanced">
+  <button class="button button-light" ui-sref="order">订单列表</button>
+  <h1 class="title">订单{{data.custom_order_id}}</h1>
+</div>
+<ion-content class="has-header has-footer2">
+	<div class="list">
+	  <!--收货信息-->
+	  <div class="item item-divider">
+	    收货信息
+	  </div>
+	  <!--<div class="item">-->
+	    <!--订单状态: <span class="balanced" ng-bind="orderStatus"></span>-->
+	  <!--</div>-->
+	  <div class="item">
+	    收货人: <span class="balanced" ng-bind="data.address.name"></span>
+	  </div>
+	  <div class="item">
+	  	电话: <span class="balanced" ng-bind="data.address.phone"></span>
+	  </div>
+	  <div class="item" ng-if="data.address.address">
+	  	地址: <span class="balanced" ng-bind="data.address.address"></span>
+	  </div>
+	  <div class="item">
+	  	送货时间: <span class="balanced"><em class="normal-size" ng-bind="data.expect_receive_start_time"></em> - <em class="normal-size" ng-bind="data.expect_receive_end_time"></em></span>
+	  </div>
+	  
+
+	  <!--订单数据-->
+	  <div class="item item-divider ">
+	    菜单
+	  </div>
+	  <div class="item no-padding" ng-repeat = "item in data.order_items">
+	  	<div class="row">
+			<div class="col balanced">
+	  			{{item.name}}{{item.level}}
+			</div>
+	  	</div>
+	  	<div ng-repeat = "ci in item.ci_items">
+            <div class="row">
+	  		<div class="col col-67">{{ci.real_price}}元/{{ci.format}}</div>
+	  		<div class="col col-10 balanced">x {{ci.expect_num}}</div>
+	  		<div class="col col-20 balanced">￥{{ci.total_price}}</div>
+            </div>
+            <div class="row">{{ci.status}}</div>
+	  	</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col right-align">总计: <span class="balanced" ng-bind="data.total_price"></span>元</div>
+	  </div>
+      <div class="row">
+          <div class="col right-align">实际金额: <span class="balanced" ng-bind="data.real_price"></span>元</div>
+      </div>
+	</div>
+
+	<div class="padding center-align">
+		<p>如需取消订单请拨打客服电话 <a class="balanced" href="tel:4001061106">400-106-1106</a></p>
+	</div>
+</ion-content>

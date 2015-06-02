@@ -1,0 +1,37 @@
+<div class="bar bar-header">
+  <button class="button button-light" ng-click="emptyCart();" ng-if = "cartCount > 0">清空</button>
+  <div class="h1 title">品类数:<span class="assertive" ng-bind="cart.totalNumber"></span>&nbsp;&nbsp;&nbsp;&nbsp; 金额:<span class="assertive" ng-bind="cart.totalPrice"></span>元</div>
+  <button  class="button button-balanced" ng-click="buy();" ng-if = "cartCount > 0 && userStatus.canOrder == 1">下单</button>
+</div>
+
+
+<ion-content class="has-header has-footer2">
+	{{model.noItem}}
+	<div class="list">
+		<div class="item-divider item assertive normal-size" ng-if="userStatus.canOrder === 0" ng-bind="userStatus.message"></div>
+		<div class="item-divider item assertive normal-size" ng-if="obj.noItem">您的购物车还没有任何商品</div>
+		<div class="si-item" ng-repeat ="item in cart.list">
+			<div class="item item-thumbnail-left" href="#">
+		        <img ng-src="{{item.pic ? picURL.prefix + item.pic + picURL.suffix : ''}}" style="width:80px; height:80px; background:#eee;">
+		        <h2 class="col-120" style="white-space:pre-wrap;word-break:break-all;" ng-bind="item.name + item.level"></h2>
+		        <p ng-bind="item.subject"></p>
+		        <p >今日已购买过<span class="assertive">{{item.today_buy}}</span>{{item.format}}</p>
+		    </div>
+			<div class="row item" ng-repeat = "ci in item.ci_items" style=" border-top:0;border-right:0;">
+
+				 <div class="col col-center font14bold">
+		          &nbsp;<span class="assertive" ng-bind="ci.real_price"></span>元/<span class="balanced" ng-bind="ci.format"></span><span ng-if="ci.promote_info"><br>&nbsp;<span class="promote assertive-bg light">限购</span><em  ng-bind="ci.promote_info"></em></span>
+		        </div>
+		        <div class="col col-center col-10">
+					<button class="button button-small button-block icon ion-minus gray" ng-click="changeNumber(item.lu_standard_item_id, ci.lu_commodity_item_id, ci.num -1,ci.num);"></button>
+				</div>
+				<div class="col col-center col-25">
+					<div class="center-align font14bold" ng-bind="ci.num" ng-click="inputFocus(item.lu_standard_item_id, ci.lu_commodity_item_id, ci.num);"></div>
+				</div>
+				<div class="col col-center col-10">
+					<button class="button button-small button-block icon ion-plus gray" ng-click="changeNumber(item.lu_standard_item_id, ci.lu_commodity_item_id, ci.num + 1,ci.num);"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

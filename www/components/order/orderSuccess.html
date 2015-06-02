@@ -1,0 +1,20 @@
+<div class="bar bar-header bar-balanced">
+  <button class="button button-light" ui-sref="dash"> 返回菜市场</button>
+  <h1 class="title">下单<span ng-if="data.ret === 1">成功</span><span ng-if="data.ret === -1">失败</span></h1>
+  <button class="button button-light" ng-if="data.ret === 1" ui-sref="orderDetail({orderId:data.data.custom_order.id})">订单详情</button>
+</div>
+<ion-content class="has-header has-footer2">
+	<div class="list" ng-if="data.ret === 1">
+		<div class="item">
+			<h2>订单{{data.data.custom_order.id}}</h2>
+			<p>下单时间: {{data.data.custom_order.c_t}}</p>
+			<p>数量: <span class="assertive">{{amount}}</span> &nbsp;&nbsp;&nbsp;&nbsp;金额: <span class="assertive">{{data.data.custom_order.total_price}}</span> 元</p>
+		</div>
+	</div>
+	<p ng-if="data.ret === -1">
+		{{data.msg}}
+	</p>
+	<div class="padding center-align" ng-if="data.ret === 1">
+		<p>如需取消订单请拨打客服电话 <a class="balanced" href="tel:4001061106">400-106-1106</a> </p>
+	</div>
+</ion-content>

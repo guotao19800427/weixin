@@ -1,0 +1,43 @@
+<div class="modal transparent">
+  <i class="icon ion-ios7-close close-modal" ng-click="closeModal()"></i>
+  <div class="item item-divider calm-bg light center-align no-left-right-border">
+    {{modalStandard.name}}
+  </div> 
+  <div class="item item-thumbnail-left no-left-right-border">
+     <img ng-src="modalStandard.pic">
+     <p ng-bind="modalStandard.subject"><p>
+  </div>
+  <div class="item item-divider row no-left-right-border no-left-right-borderß">
+  	<div class="col">今天已买 <span class="balanced" ng-bind="modalStandard.todayBuyNumber"></span></div>
+  	<div class="col right-align">已选 <span class="assertive" ng-bind="modalStandard.totalUnit"></span>斤</div>
+  </div>
+  <div class=" row" ng-repeat = "item in modalCommdities">
+  	<div class="col col-center">
+  		{{item.weight_unit}} (<span class="assertive" ng-bind="item.price"></span>元/斤)
+  	</div>
+  	<div class="col-10 col">
+  		<button ng-click="minus(item.id, modalCommdities)" class="button button-small button-block icon ion-minus"></button>
+  	</div>
+  	<div class="col-33 col col-center">
+  		<input type="tel" class="center-align" ng-model="item.soldCount">
+  	</div>
+  	<div class="col-10 col">
+  		<button ng-click="plus(item.id, modalCommdities)" class="button button-small button-block icon ion-plus"></button>
+  	</div>
+  </div>
+   <div class="item item-divider row right-align no-left-right-border">
+   	小计 <span ng-bind = "modalStandard.totalPrice"></span> 元
+   </div>
+   <div class="row">
+   	<div class="col">
+   		<button class="button button-block button-positive">
+		  取消
+		</button>
+   	</div>
+   	<div class="col">
+   		<button class="button button-block button-balanced" ng-click="addToCart(modalCommdities);">
+		 	加入购物车
+		</button>
+   	</div>
+   </div>  
+</div>
